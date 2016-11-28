@@ -1,8 +1,6 @@
 DataSDK
 =====
 
-[ ![Download](https://api.bintray.com/packages/invenogeek/maven/data-sdk/images/download.svg?version=1.0.0) ](https://bintray.com/invenogeek/maven/data-sdk/1.0.0/link)
-
 依赖
 --------
 Gradle：
@@ -13,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.inveno:datasdk:1.0.0@aar'
+  compile 'com.inveno:datasdk:1.0.1@aar'
 }
 ```
 
