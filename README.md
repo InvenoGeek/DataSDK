@@ -13,8 +13,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.bumptech.glide:glide:3.7.0'
-  compile 'com.android.support:support-v4:19.1.0'
+  compile 'com.inveno:datasdk:1.0.0@aar'
 }
 ```
 
@@ -25,7 +24,7 @@ Maven：
   <groupId>com.inveno</groupId>
   <artifactId>datasdk</artifactId>
   <version>1.0.0</version>
-  <type>pom</type>
+  <type>aar</type>
 </dependency>
 ```
 
