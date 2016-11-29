@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.inveno:datasdk:1.0.1@aar'
+  compile 'com.inveno:datasdk:latest.integration@aar'
   compile 'com.squareup.okhttp3:okhttp:3.4.2'
 }
 ```
