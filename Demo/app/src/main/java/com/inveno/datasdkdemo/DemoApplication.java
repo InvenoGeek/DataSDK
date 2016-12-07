@@ -22,7 +22,7 @@ public class DemoApplication extends Application {
                 BuildConfig.PRODUCT_ID,
                 BuildConfig.PROMOTION,
                 BuildConfig.VERSION_NAME,
-                AppLanguage.UNKNOWN,
+                AppLanguage.ENGLISH,
                 BuildConfig.COUNTRY_CODE,
                 BuildConfig.APP_KEY,
                 BuildConfig.APP_SECRET);

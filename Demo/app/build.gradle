@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "PRODUCT_ID", "\"product_id\"" // 替换为实际值
+        buildConfigField "String", "PRODUCT_ID", properties.getProperty("PRODUCT_ID") // 定义在local.properties中
         buildConfigField "String", "PROMOTION", "\"gp\""
         buildConfigField "String", "COUNTRY_CODE", "\"IN\""
         buildConfigField "String", "APP_KEY", properties.getProperty("APP_KEY") // 定义在local.properties中
