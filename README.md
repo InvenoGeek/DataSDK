@@ -32,10 +32,18 @@ Maven：
 接入步骤
 --------
 1. 申请product_id、scenario列表、APP_KEY、APP_SECRET
+
 2. 初始化SDK
-3. （可选）更改host或app_lan
-3. 调用下发接口请求数据
-4. 调用上报接口上报事件
+
+3. （可选）设置host或app_lan
+
+   > 设置host应在初始化SDK之前
+
+4. （可选）添加获取uid回调
+
+5. 调用下发接口请求数据
+
+6. 调用上报接口上报事件
 
 申请product_id、scenario列表、APP_KEY、APP_SECRET
 --------
