@@ -1,8 +1,5 @@
 package com.inveno.datasdkdemo;
 
-import com.inveno.datasdk.XZSDKManager;
-import com.inveno.datasdk.constant.AppLanguage;
-
 import android.app.Application;
 
 public class DemoApplication extends Application {
@@ -11,21 +8,8 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // 一般而言，应在Application中初始化SDK，但也可延迟到调用第一次请求数据之前
         // 初始化DataSDK
-        initDataSDK();
-    }
-
-    private void initDataSDK() {
-        // @formatter:off
-        XZSDKManager.init(
-                this,
-                BuildConfig.PRODUCT_ID,
-                BuildConfig.PROMOTION,
-                BuildConfig.VERSION_NAME,
-                AppLanguage.ENGLISH,
-                BuildConfig.COUNTRY_CODE,
-                BuildConfig.APP_KEY,
-                BuildConfig.APP_SECRET);
-        // @formatter:on
+        // DataSDKWrapper.init(this);
     }
 }

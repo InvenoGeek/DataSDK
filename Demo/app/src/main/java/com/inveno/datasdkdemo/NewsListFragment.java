@@ -2,12 +2,13 @@ package com.inveno.datasdkdemo;
 
 import java.util.List;
 
-import com.inveno.datasdk.XZDataAgent;
-import com.inveno.datasdk.XZReportAgent;
+import com.inveno.datasdk.XZSDKManager;
 import com.inveno.datasdk.callback.GetNewsListCallback;
+import com.inveno.datasdk.callback.GetUidCallback;
 import com.inveno.datasdk.model.News;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -71,26 +72,36 @@ public class NewsListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         // 列表进入
-        XZReportAgent.onListEnter(getContext().getApplicationContext(), scenario);
+        DataSDKWrapper.onListEnter(getContext().getApplicationContext(), scenario);
     }
 
     @Override
     public void onPause() {
         super.onPause();
         // 列表退出. 上报列表时长
-        XZReportAgent.onListExit(getContext().getApplicationContext(), scenario);
+        DataSDKWrapper.onListExit(getContext().getApplicationContext(), scenario);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        refresh();
+
+        // 初始化DataSDK
+        DataSDKWrapper.init(getContext().getApplicationContext());
+
+        XZSDKManager.addGetUidListener(new GetUidCallback() {
+
+            @Override
+            public void onReady(@NonNull String uid) {
+                refresh();
+            }
+        });
     }
 
     private void refresh() {
         setRefreshing(true);
 
-        XZDataAgent.listRefresh(getContext().getApplicationContext(), scenario, 10, new GetNewsListCallback() {
+        DataSDKWrapper.listRefresh(getContext().getApplicationContext(), scenario, 3, new GetNewsListCallback() {
 
             @Override
             public void onSuccess(List<News> list) {

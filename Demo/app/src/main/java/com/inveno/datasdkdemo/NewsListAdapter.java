@@ -3,7 +3,7 @@ package com.inveno.datasdkdemo;
 import java.util.List;
 
 import com.bumptech.glide.Glide;
-import com.inveno.datasdk.XZReportAgent;
+import com.inveno.datasdk.constant.OpenType;
 import com.inveno.datasdk.model.Image;
 import com.inveno.datasdk.model.News;
 
@@ -52,14 +52,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
                 view.getContext().startActivity(intent);
 
                 // 上报条目点击
-                XZReportAgent.onItemShow(view.getContext(), news.getScenario(), news.getContentId(), news.getCpack(),
-                                         news.getServerTime(), null, null);
+                DataSDKWrapper.onItemClick(view.getContext(), news.getScenario(), news.getContentId(), news.getCpack(),
+                                           OpenType.OUTSIDE_APP, null, null);
             }
         });
 
         // 上报条目展示
-        XZReportAgent.onItemShow(holder.itemView.getContext(), news.getScenario(), news.getContentId(), news.getCpack(),
-                                 news.getServerTime(), null, null);
+        DataSDKWrapper.onItemShow(holder.itemView.getContext(), news.getScenario(), news.getContentId(), news.getCpack(),
+                                  news.getServerTime(), null, null);
     }
 
     @Override
