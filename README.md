@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.inveno:datasdk:latest.integration@aar'
+  compile 'com.inveno:datasdk:1.0.6@aar'
   compile 'com.squareup.okhttp3:okhttp:3.4.2'
 }
 ```
@@ -24,7 +24,7 @@ Maven：
 <dependency>
   <groupId>com.inveno</groupId>
   <artifactId>datasdk</artifactId>
-  <version>latest.integration</version>
+  <version>1.0.6</version>
   <type>aar</type>
 </dependency>
 ```
